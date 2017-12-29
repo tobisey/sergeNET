@@ -1,0 +1,611 @@
+@keyframes slide-in {
+    /*0%   {opacity: 0}
+    100% {opacity: 1}*/
+    0%   {top: 100vh}
+    100% {top: 15vh}
+}
+
+@keyframes flash {
+    0%   {filter: invert(0%);}
+    50%  {filter: invert(100%);}
+    100% {filter: invert(0%);}
+}
+
+@keyframes spaceship {
+    0%   {perspective: 25px}
+    100% {perspective: 250px}
+}
+
+@keyframes movementChat {
+    0%   {transform: rotateY(5deg);}
+    10%  {transform: rotateY(7deg);}
+    20%  {transform: rotateY(5deg);}
+    30%  {transform: rotateY(7deg);}
+    40%  {transform: rotateY(5deg);}
+    50%  {transform: rotateY(7deg);}
+    60%  {transform: rotateY(5deg);}
+    70%  {transform: rotateY(7deg);}
+    80%  {transform: rotateY(5deg);}
+    90%  {transform: rotateY(7deg);}
+    100% {transform: rotateY(5deg);}
+}
+
+@keyframes movementFriends {
+    0%   {transform: rotateY(-5deg);}
+    10%  {transform: rotateY(-9deg);}
+    20%  {transform: rotateY(-5deg);}
+    30%  {transform: rotateY(-9deg);}
+    40%  {transform: rotateY(-5deg);}
+    50%  {transform: rotateY(-9deg);}
+    60%  {transform: rotateY(-5deg);}
+    70%  {transform: rotateY(-9deg);}
+    80%  {transform: rotateY(-5deg);}
+    90%  {transform: rotateY(-9deg);}
+    100% {transform: rotateY(-5deg);}
+}
+
+@keyframes fadeOut {
+    0%   {opacity: 0}
+    20%  {opacity: 1}
+    80%  {opacity: 1}
+    100% {opacity: 0}
+}
+
+* {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 500;
+    color: hotpink;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    background-color: blue;
+}
+
+p, a {
+    font-size: 14px;
+}
+
+.title {
+    margin-left: 10px;
+}
+
+/*REGISTER -- LOGIN*/
+
+.inputs {
+    width: 260px;
+    height: 320px;
+    margin-top: 50px;
+    margin-left: 50px;
+    padding: 30px 10px 10px 10px;
+    box-shadow: 8px 8px 50px black;
+}
+
+input, button {
+    background-color: blue;
+    border: 1px solid hotpink;
+    margin-top: 10px;
+}
+
+/*button:hover {
+    color: #4197f4;
+    border: 1px solid #4197f4;
+}*/
+
+input::placeholder {
+    color: hotpink;
+}
+
+hr {
+    border: 0.5px solid hotpink;
+    margin-top: 10px;
+}
+
+.error {
+    /*animation: jiggle 0.15s linear 3;*/
+}
+
+/*HOME*/
+
+.loading {
+    position: absolute;
+    left: 20vw;
+    top: 200px;
+    width: 300px;
+    height: 150px;
+    background-color: blue;
+    border: 1px solid hotpink;
+    box-shadow: 8px 8px 50px black;
+}
+
+.logo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 70px;
+}
+
+.imageBoxWrapper {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 120px;
+    height: 120px;
+    border-left: 1px solid hotpink;
+    border-bottom: 1px solid hotpink;
+}
+
+.imageBox {
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+}
+
+img {
+    width: 150%;
+    animation: flash 0.15s linear 2;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: flex-end;*/
+    align-items: flex-end;
+    position: absolute;
+    right: 10px;
+    top: 150px;
+}
+
+.ppHr {
+    margin: 145px 10px 0px 10px;
+}
+
+.number {
+    position: absolute;
+    bottom: 220px;
+    right: 1.1vw;
+    width: 500px;
+    height: 200px;
+    transform: rotate(90deg);
+    /*pointer-events: none;*/
+}
+
+.number h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 150px;
+    text-align: right;
+}
+
+.number a {
+    text-decoration: none;
+}
+
+.link {
+    position: absolute;
+    top: 310px;
+    left: -340px;
+    width: 800px;
+    height: 200px;
+    transform: rotate(90deg);
+    /*pointer-events: none;*/
+}
+
+.link h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 55px;
+    text-align: right;
+    line-height: 80%;
+}
+
+.link a {
+    text-decoration: none;
+}
+
+.uploader {
+    position: absolute;
+    z-index: 3;
+    padding-left: 20px;
+    top: 200px;
+    left: 35vw;
+    width: 300px;
+    height: 200px;
+    background-color: blue;
+    /*border: 1px solid hotpink;*/
+    box-shadow: 8px 8px 50px black;
+}
+
+.x {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.file-input {
+    margin-top: 50px;
+}
+
+.profilePersepctive {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 10vw;
+    width: 60vw;
+    height: 600px;
+    /*animation: side-in 1s linear 1;*/
+    -webkit-perspective: 250px;
+    perspective: 250px;
+}
+
+.profile {
+    overflow: scroll;
+    width: 60vw;
+    height: 600px;
+    padding: 10px;
+    /*width: 60vw;
+    height: 600px;*/
+    background-color: blue;
+    /*border: 1px solid hotpink;*/
+    box-shadow: 8px 8px 50px black;
+    /*animation: slide-in 1s;*/
+    transform: rotateX(2deg);
+}
+
+.profile::-webkit-scrollbar {
+    display: none;
+}
+
+.editBio {
+    position: absolute;
+    z-index: 2;
+    left: 40vw;
+    top: 345px;
+    width: 450px;
+    height: 200px;
+    padding: 30px;
+    background-color: blue;
+    /*border: 1px solid hotpink;*/
+    box-shadow: 8px 8px 50px black;
+    /*animation: slide-in 1s;*/
+}
+
+textarea {
+    resize: none;
+    background-color: blue;
+    border: 1px solid hotpink;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.otherUserImageBoxWrapper {
+    display: flex;
+    justify-content: flex-start;
+    right: 10px;
+    top: 10px;
+    border-right: 1px solid hotpink;
+    border-bottom: 1px solid hotpink;
+    width: 210px;
+    height: 210px;
+}
+
+.otherUserImageBox {
+    /*position: absolute;
+    top: 10px;
+    left: 10px;*/
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.bioWrapper {
+    padding-right: 10px;
+    border-right: 1px solid hotpink;
+    border-bottom: 1px solid hotpink;
+    /*padding: 0px 10px 0px 10px;
+    border: 1px solid hotpink;*/
+}
+
+.friendsPerspective {
+    position: absolute;
+    z-index: 20;
+    right: 50px;
+    bottom: 50px;
+    animation: spaceship 1s linear 1;
+    -webkit-perspective: 250px;
+    perspective: 250px;
+}
+
+.friends {
+    /*display: flex;
+    flex-direction: column;
+    align-items: flex-end;*/
+    /*position: absolute;
+    z-index: 7;*/
+    padding-top: 20px;
+    height: 700px;
+    width: 200px;
+    background-color: blue;
+    /*border: 1px solid hotpink;*/
+    box-shadow: 8px 8px 50px black;
+    /*transform: rotate(10deg);*/
+    /*animation: movementFriends 30s infinite;*/
+    -webkit-transform: rotateY(-9deg);
+    transform: rotateY(-9deg);
+}
+
+.friends p {
+    font-size: 12px;
+}
+
+.friendsInner {
+    overflow-y: scroll;
+    margin-top: 10px;
+    height: 650px;
+}
+
+.friendsInner::-webkit-scrollbar {
+    display: none;
+}
+
+.friends hr {
+    width: 90%;
+}
+
+.friends h4 {
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+.request {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+/*.request:first-of-type {
+    margin-left: 0px;
+}*/
+
+
+.friend {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+/*.friend:first-of-type {
+    margin-left: 0px;
+}*/
+
+.nameAndButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.nameAndButtons p {
+    margin: 5px 0px 5px 0px;
+}
+
+.nameAndButtons button {
+    margin-top: 0px;
+}
+
+.friendsImageBoxWrapper {
+    display: flex;
+    justify-content: flex-start;
+    /*position: absolute;*/
+    margin-top: 10px;
+    /*margin-left: 10px;*/
+    right: 10px;
+    top: 10px;
+    width: 130px;
+    height: 130px;
+    border-right: 1px solid hotpink;
+    border-bottom: 1px solid hotpink;
+}
+
+.friendsImageBox {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.rejectButton {
+    margin-left: 10px;
+}
+
+.rejected {
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+.rejected h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 55px;
+    text-align: right;
+    animation: flash 0.15s infinite;
+}
+
+.newUserOnline {
+    position: absolute;
+    z-index: 25;
+    width: 350px;
+    top: 95px;
+    left: 40vw;
+    /*animation: fadeOut 6s;
+    -webkit-animation: fadeOut 6s;
+    -moz-animation: fadeOut 6s;*/
+    /*background-color: blue;
+    box-shadow: 8px 8px 50px black;*/
+    pointer-events: none;
+}
+
+.note {
+    opacity: 0;
+}
+
+.animate {
+    opacity: 1;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 55px;
+    animation: flash 0.15s linear 25;
+    -webkit-animation: flash 0.15s linear 25;
+    -moz-animation: flash 0.15s linear 25;
+}
+
+.perspective {
+    position: absolute;
+    z-index: 20;
+    left: 7vw;
+    animation: spaceship 1s linear 1;
+    -webkit-perspective: 250px;
+    perspective: 250px;
+}
+
+.chat {
+    /*position: absolute;*/
+    /*z-index: 17;*/
+    /*top: 80px;*/
+    width: 30vw;
+    height: 500px;
+    padding: 10px;
+    background-color: blue;
+    /*border: 1px solid hotpink;*/
+    box-shadow: 8px 8px 50px black;
+    /*animation: movementChat 30s infinite;*/
+    -webkit-transform: rotateY(5deg);
+    transform: rotateY(5deg);
+}
+
+.writeMessage {
+    position: absolute;
+    bottom: 10px;
+    width: 80%;
+}
+
+.previousMessages {
+    margin-top: 20px;
+    overflow: scroll;
+    height: 310px;
+}
+
+.previousMessages::-webkit-scrollbar {
+    display: none;
+}
+
+.sendButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.chatImageBoxWrapper {
+    display: flex;
+    justify-content: flex-start;
+    /*position: absolute;*/
+    /*margin-left: 10px;*/
+    margin-bottom: 10px;
+    right: 10px;
+    top: 10px;
+    width: 75px;
+    height: 75px;
+    border-right: 1px solid hotpink;
+    border-bottom: 1px solid hotpink;
+}
+
+.chatImageBox {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+
+.chatWrapper {
+    display: flex;
+    padding-right: 10px;
+    margin-top: 10px;
+    border-right: 1px solid hotpink;
+    border-bottom: 1px solid hotpink;
+    /*padding: 0px 10px 0px 10px;
+    border: 1px solid hotpink;*/
+}
+
+.chatText {
+    /*align-self: flex-end;*/
+    margin-left: 10px;
+    width: 70%;
+}
+
+.oUX {
+    position: absolute;
+    z-index: 10;
+    left: 5px;
+    top: 5px;
+}
+
+.onlineUsersPerspective {
+    position: absolute;
+    z-index: 25;
+    top: 2px;
+    left: 20vw;
+    animation: spaceship 1s linear 1;
+    -webkit-perspective: 250px;
+    perspective: 250px;
+}
+
+.onlineUsers {
+    width: 60vw;
+    height: 150px;
+    padding: 10px;
+    overflow-x: scroll;
+    overflow-y: none;
+    white-space: nowrap;
+    margin-left: 10px;
+    /*background-color: blue;*/
+    /*border: 1px solid hotpink;*/
+    /*box-shadow: 8px 8px 50px black;*/
+    /*animation: movementChat 30s infinite;*/
+    -webkit-transform: rotateX(-5deg);
+    transform: rotateX(-5deg);
+}
+
+.onlineUsers::-webkit-scrollbar {
+    display: none;
+}
+
+.onlineUser {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.onlineUser p {
+    font-size: 12px;
+}
+
+.onlineUserImageBoxWrapper {
+    display: flex;
+    justify-content: flex-start;
+    /*position: absolute;*/
+    margin-top: 10px;
+    /*margin-left: 10px;*/
+    right: 10px;
+    top: 10px;
+    width: 100px;
+    height: 100px;
+    border-right: 1.5px solid hotpink;
+    border-bottom: 1.5px solid hotpink;
+
+}
+
+.onlineUserImageBox {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    box-shadow: 8px 8px 50px black;
+}
